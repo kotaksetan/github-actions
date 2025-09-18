@@ -119,7 +119,7 @@ jobs:
       # Artifact Import
       # ------------------------------------------------------------
       - name: "[Artifact Load] Download previously built image"
-        uses: kotaksetan/download-artifact-retry-action@v0.1.5
+        uses: kotaksetan/download-artifact-retry-action@v0.2.0
         with:
           name: ${{ steps.set-artifact-name.outputs.prev }}
         if: ${{ inputs.stage_prev != '' }}

@@ -73,13 +73,13 @@ jobs:
       # Setup repository
       # ------------------------------------------------------------
       - name: "[SETUP] Checkout repository (current)"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
         if: ${{ !inputs.has_refs }}
 
       - name: "[SETUP] Checkout repository (ref: ${{ matrix.REFS }})"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ matrix.REFS }}
@@ -188,7 +188,7 @@ jobs:
       # Artifact Export
       # ------------------------------------------------------------
       - name: "[Artifact Save] Upload built artifact"
-        uses: kotaksetan/upload-artifact-retry-action@v0.1.7
+        uses: kotaksetan/upload-artifact-retry-action@v0.2.0
         with:
           name: ${{ steps.set-artifact-name.outputs.curr }}
           path: ${{ steps.set-artifact-name.outputs.curr }}
